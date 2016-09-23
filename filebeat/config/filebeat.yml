@@ -23,7 +23,7 @@ filebeat:
     -
       paths:
         - "/var/lib/pgsql/9.1/data/pg_log/*.log"
-      document_type: pg
+      document_type: postgresql
 
 output:
   logstash:

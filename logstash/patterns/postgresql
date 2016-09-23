@@ -1,0 +1,7 @@
+# log_line_prefix = '%t [%p]: [%c] user=%u,db=%d,app=%a,client=%h '
+
+### define the prefix
+PGPREFIX %{DATESTAMP:@timestamp} %{TZ} \[%{POSINT:pid}\]: \[%{GREEDYDATA:session_id}\] user=%{DATA:user_id},db=%{DATA:db_name},app=%{DATA:app_name},client=%{IPORHOST:client}
+PGLOGPREFIX %{PGPREFIX}%{SPACE}LOG:
+
+POSTGRES %{PGLOGPREFIX}%{SPACE}duration: %{NUMBER:duration} ms%{SPACE}statement: %{GREEDYDATA:statement}

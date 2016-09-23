@@ -5,4 +5,5 @@ FROM logstash:latest
 RUN logstash-plugin install logstash-filter-json
 RUN logstash-plugin install logstash-filter-mutate
 RUN logstash-plugin install logstash-filter-geoip
+RUN logstash-plugin install logstash-filter-grok
 RUN logstash-plugin install logstash-input-beats
