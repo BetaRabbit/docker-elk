@@ -1,0 +1,34 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /var/log/dashboard.log
+      document_type: dashboard
+    -
+      paths:
+        - /var/log/nginx/access.log
+      document_type: nginx-access
+    -
+      paths:
+        - /var/log/nginx/error.log
+      document_type: nginx-error
+    -
+      paths:
+        - /var/log/celery_worker.log
+      document_type: celery-worker
+    -
+      paths:
+        - /var/log/redis.log
+      document_type: redis
+    -
+      paths:
+        - "/var/lib/pgsql/9.1/data/pg_log/*.log"
+      document_type: pg
+
+output:
+  logstash:
+    hosts: ["10.157.14.136:5044"]
+
+shipper:
+  name: "opd-lab-tianxiaom"
+  tags: ["db", "web", "redis"]

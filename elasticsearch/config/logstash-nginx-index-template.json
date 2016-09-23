@@ -1,0 +1,52 @@
+{
+  "template": "logstash-nginx-*",
+  "order": 1,
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "nginx-access": {
+      "properties": {
+        "host": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+         "client_ip": {
+          "type": "ip"
+        },
+         "http_host": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+         "uri": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+         "http_x_forwarded_for": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+         "referer": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+         "user_agent": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+         "request_method": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+         "request_uri": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+         "request_body": {
+          "type": "string",
+          "index": "not_analyzed"
+        }
+      }
+    }
+  }
+}
