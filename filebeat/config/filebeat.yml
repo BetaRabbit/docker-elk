@@ -24,6 +24,10 @@ filebeat:
       paths:
         - "/var/lib/pgsql/9.1/data/pg_log/*.log"
       document_type: postgresql
+    -
+      paths:
+        - /var/log/kafka-lag.log
+      document_type: kafka-lag
 
 output:
   logstash:

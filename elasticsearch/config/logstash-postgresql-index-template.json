@@ -1,9 +1,6 @@
 {
   "template": "logstash-postgresql-*",
   "order": 1,
-  "settings": {
-    "number_of_shards": 1
-  },
   "mappings": {
     "postgresql": {
       "properties": {

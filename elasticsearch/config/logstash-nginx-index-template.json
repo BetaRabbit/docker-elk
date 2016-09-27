@@ -1,9 +1,6 @@
 {
   "template": "logstash-nginx-*",
   "order": 1,
-  "settings": {
-    "number_of_shards": 1
-  },
   "mappings": {
     "nginx-access": {
       "properties": {

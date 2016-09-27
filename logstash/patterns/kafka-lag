@@ -1,0 +1,1 @@
+KAFKALAG %{DATESTAMP:@timestamp}\s+%{DATA:client_name}\s+%{DATA:topic}\s+%{DATA:partition_id}\s+%{NUMBER:offset}\s+%{NUMBER:log_size}\s+%{NUMBER:lag}
